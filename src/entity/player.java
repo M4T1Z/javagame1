@@ -13,6 +13,7 @@ public class player extends entity{
     KeyHandler keyH;
 
     public final int screenX;
+    public int points = 0;
 
     public player (Panel gp, KeyHandler keyH){
         this.gp = gp;
@@ -21,6 +22,9 @@ public class player extends entity{
         screenX = gp.szerokosc - 900 - (gp.wielkoscBox/2);
 
         SolidBox = new Rectangle(0, 0, gp.wielkoscBox, gp.wielkoscBox);
+        SolidAreaDefX = SolidBox.x;
+        SolidAreaDefY = SolidBox.y;
+
 
 
         setDefaultValues();
@@ -65,6 +69,11 @@ public class player extends entity{
         collisionOn = false;
         gp.checker.checker(this);
 
+    //kolizja obiektow
+        int objIndex = gp.checker.checkObject(this,true);
+        pickUp(objIndex);
+
+
         if(collisionOn == false){
             switch (direction){
             case "up":
@@ -86,6 +95,40 @@ public class player extends entity{
         }
 
 
+    }
+
+    public void pickUp(int i){
+        if(i != 9999){
+
+            String objectName = gp.obj[i].name;
+
+            switch (objectName){
+                case "Paper":
+                    //funkcja z wyborem właściwym papierem - zwrotka w postaci odp czy dobrze wybrano,
+                    //jesli tak to -2 sek z czasu i +1 pkt
+                    gp.obj[i] = null;
+                    break;
+
+                case "Plastic":
+                    //funkcja z wyborem właściwym plastikiem
+
+
+                    gp.obj[i] = null;
+                    break;
+
+                case "Glass":
+                    //funkcja z wyborem właściwym szklem
+                    gp.obj[i] = null;
+                    break;
+
+                case "Mixed":
+                    //funkcja z wyborem właściwym mieszanym
+                    gp.obj[i] = null;
+                    break;
+            }
+
+
+        }
     }
 
     public void draw(Graphics2D g2){

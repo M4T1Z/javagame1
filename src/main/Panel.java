@@ -4,6 +4,8 @@ import javax.swing.JPanel;
 import java.awt.*;
 import entity.player;
 import map.manager;
+import objects.Sobject;
+
 public class Panel extends JPanel implements Runnable{
 
     //ustawienia ekranu
@@ -16,7 +18,7 @@ public class Panel extends JPanel implements Runnable{
     public final int wysokosc = wielkoscBox * MaxWys;          //768 px
 
     //ustawienia mapy świata
-    public final int MaxWorldCol = 26;
+    public final int MaxWorldCol = 302/2;
     public final int MaxWorldRow = MaxWys;
     public final int worldSzer = MaxWorldCol * wielkoscBox;     //6400 px
     public final int worldWys = MaxWorldRow * wielkoscBox;      //768 px
@@ -28,8 +30,10 @@ public class Panel extends JPanel implements Runnable{
     Thread gameThread;
 
     public colission checker = new colission(this);
-
+    public ObjectSetter oSetter = new ObjectSetter(this);
+    public UI ui = new UI(this);
     public player player = new player(this,keyH);
+    public Sobject obj[] = new Sobject[15];
 
 
     int fps = 60;
@@ -44,6 +48,10 @@ public class Panel extends JPanel implements Runnable{
         this.addKeyListener(keyH);
         this.setFocusable(true);
         manager.getTileImage();
+    }
+
+    public void setupObject(){
+        oSetter.setObject();
     }
 
     public void startgameThread(){
@@ -91,9 +99,19 @@ public class Panel extends JPanel implements Runnable{
 
         Graphics2D g2 = (Graphics2D) g;
 
+        //tile
         manager.drawMap(g2);
-
+        //object
+        for (int i = 0; i < obj.length; i++){
+            if (obj[i] != null){
+                obj[i].draw(g2, this);
+            }
+        }
+        //player
         player.draw(g2);
+
+        //UI
+        ui.draw(g2);
         g2.dispose();
 
     }

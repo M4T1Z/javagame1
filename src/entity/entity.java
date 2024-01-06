@@ -10,6 +10,7 @@ public class entity {
     public BufferedImage up, down, left, right;
     public String direction;
     public Rectangle SolidBox;
+    public int SolidAreaDefX, SolidAreaDefY;
     public boolean collisionOn = false;
 
 }

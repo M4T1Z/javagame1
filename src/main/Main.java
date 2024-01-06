@@ -16,6 +16,7 @@ public class Main {
         okno.add(panel);
         okno.pack();
 
+        panel.setupObject();
         panel.startgameThread();
 
 
