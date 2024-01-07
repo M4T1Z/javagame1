@@ -5,43 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cede2a9c-59e8-46a7-97f5-2f1eade7da0a" name="Changes" comment="V0.002">
-      <change afterPath="$PROJECT_DIR$/src/background/blok1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/background/domek.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/background/domek2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/background/drzewo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/background/meta.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/ObjectSetter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/UI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objects/ObjectBottleG.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objects/ObjectBottleP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objects/ObjectBottleP2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objects/ObjectCan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objects/ObjectCan2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objects/ObjectCarton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objects/ObjectCup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objects/ObjectJar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objects/ObjectPaper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objects/ObjectPizza.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objects/Sobject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objects/butelka_plastik.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objects/butelka_plastik2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objects/butelka_szklo2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objects/gazety_papier.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objects/karton.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objects/kubek_zmieszane2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objects/pizza_zmieszane.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objects/puszka_metal2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objects/puszka_metal3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objects/sloik_szklo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objects/torebka_papier.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/background/domek3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/background/drzewo2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/background/tło.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/background/tło1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/background/tło1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/background/tło1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/background/ulica.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/background/ulica.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ObjectSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ObjectSetter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Panel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/colission.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/colission.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/map/manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/map/manager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/maps/map1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/maps/map1.txt" afterDir="false" />
     </list>
@@ -119,8 +89,18 @@
       <workItem from="1701880754276" duration="4459000" />
       <workItem from="1701893047644" duration="137000" />
       <workItem from="1702497529072" duration="599000" />
-      <workItem from="1704546836355" duration="21447000" />
+      <workItem from="1704546836355" duration="21766000" />
+      <workItem from="1704625151121" duration="4365000" />
     </task>
+    <task id="LOCAL-00001" summary="V0.002">
+      <option name="closed" value="true" />
+      <created>1704579378179</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1704579378179</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,6 +119,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="V0.002" />
+    <option name="LAST_COMMIT_MESSAGE" value="V0.002" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

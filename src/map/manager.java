@@ -48,6 +48,14 @@ public class manager {
             tile[4].image = ImageIO.read(getClass().getResourceAsStream("/background/domek2.png"));
             tile[4].collision = true;
 
+            tile[5] = new tile();
+            tile[5].image = ImageIO.read(getClass().getResourceAsStream("/background/domek3.png"));
+            tile[5].collision = true;
+
+            tile[6] = new tile();
+            tile[6].image = ImageIO.read(getClass().getResourceAsStream("/background/drzewo2.png"));
+            tile[6].collision = true;
+
 
 
             tile[9] = new tile();

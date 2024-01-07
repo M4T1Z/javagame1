@@ -33,7 +33,7 @@ public class Panel extends JPanel implements Runnable{
     public ObjectSetter oSetter = new ObjectSetter(this);
     public UI ui = new UI(this);
     public player player = new player(this,keyH);
-    public Sobject obj[] = new Sobject[15];
+    public Sobject obj[] = new Sobject[35];
 
 
     int fps = 60;

@@ -64,7 +64,7 @@ public class UI {
 
             //time
             playtime += (double)1/60;
-            g2.drawString("Time:"+ format.format(playtime),30 ,100);
+            g2.drawString("Czas:"+ format.format(playtime),30 ,100);
 
 
         }
