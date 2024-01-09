@@ -7,7 +7,7 @@ public class KeyHandler implements KeyListener {
     public void keyTyped(KeyEvent e){
 
     }
-// wczytywanie klawiszy
+    // wczytywanie klawiszy
     @Override
     public void keyPressed(KeyEvent e) {
         int kod = e.getKeyCode();
@@ -23,6 +23,9 @@ public class KeyHandler implements KeyListener {
         }
         if(kod == KeyEvent.VK_D){
             RIGHT = true;
+        }
+        if(kod == KeyEvent.VK_ESCAPE){
+            GameState.state = GameState.PAUSE;
         }
 
     }

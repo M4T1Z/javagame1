@@ -1,5 +1,6 @@
 package entity;
 
+import main.GameState;
 import main.KeyHandler;
 import main.Panel;
 
@@ -11,6 +12,10 @@ import java.io.IOException;
 public class player extends entity{
     Panel gp;
     KeyHandler keyH;
+
+    public int objIndex;
+
+    public String objectName;
 
     public final int screenX;
     public int points = 0;
@@ -65,32 +70,32 @@ public class player extends entity{
         else if(keyH.RIGHT){
             direction = "right";
         }
-    //sprawdzanie kolizji
+        //sprawdzanie kolizji
         collisionOn = false;
         gp.checker.checker(this);
 
-    //kolizja obiektow
-        int objIndex = gp.checker.checkObject(this,true);
+        //kolizja obiektow
+        objIndex = gp.checker.checkObject(this,true);
         pickUp(objIndex);
 
 
         if(collisionOn == false){
             switch (direction){
-            case "up":
-                worldY -= playerSpeed;
-                break;
+                case "up":
+                    worldY -= playerSpeed;
+                    break;
 
-            case "down":
-                worldY += playerSpeed;
-                break;
+                case "down":
+                    worldY += playerSpeed;
+                    break;
 
-            case "left":
-                worldX -= playerSpeed;
-                break;
+                case "left":
+                    worldX -= playerSpeed;
+                    break;
 
-            case "right":
-                worldX += playerSpeed;
-                break;
+                case "right":
+                    worldX += playerSpeed;
+                    break;
             }
         }
 
@@ -99,34 +104,8 @@ public class player extends entity{
 
     public void pickUp(int i){
         if(i != 9999){
-
-            String objectName = gp.obj[i].name;
-
-            switch (objectName){
-                case "Paper":
-                    //funkcja z wyborem właściwym papierem - zwrotka w postaci odp czy dobrze wybrano,
-                    //jesli tak to -2 sek z czasu i +1 pkt
-                    gp.obj[i] = null;
-                    break;
-
-                case "Plastic":
-                    //funkcja z wyborem właściwym plastikiem
-
-
-                    gp.obj[i] = null;
-                    break;
-
-                case "Glass":
-                    //funkcja z wyborem właściwym szklem
-                    gp.obj[i] = null;
-                    break;
-
-                case "Mixed":
-                    //funkcja z wyborem właściwym mieszanym
-                    gp.obj[i] = null;
-                    break;
-            }
-
+            objectName = gp.obj[i].name;
+            GameState.state = GameState.QUEST;
 
         }
     }

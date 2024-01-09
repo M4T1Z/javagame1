@@ -1,7 +1,12 @@
 package main;
 
-import javax.swing.JPanel;
+import javax.imageio.ImageIO;
+import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
 import entity.player;
 import map.manager;
 import objects.Sobject;
@@ -22,8 +27,11 @@ public class Panel extends JPanel implements Runnable{
     public final int MaxWorldRow = MaxWys;
     public final int worldSzer = MaxWorldCol * wielkoscBox;     //6400 px
     public final int worldWys = MaxWorldRow * wielkoscBox;      //768 px
+    double playtime;
 
+    public GameWindow gameWindow;
 
+    public BufferedImage bufferedImage;
 
     manager manager = new manager(this);
     KeyHandler keyH = new KeyHandler();
@@ -32,7 +40,9 @@ public class Panel extends JPanel implements Runnable{
     public colission checker = new colission(this);
     public ObjectSetter oSetter = new ObjectSetter(this);
     public UI ui = new UI(this);
-    public player player = new player(this,keyH);
+    public player player;
+    public TaskManager taskManager;
+    public Menu menu;
     public Sobject obj[] = new Sobject[35];
 
 
@@ -40,8 +50,14 @@ public class Panel extends JPanel implements Runnable{
 
 
 
-    public Panel(){
+    public Panel(GameWindow gameWindow){
+        super();
+        this.gameWindow = gameWindow;
 
+        setLayout(null);
+        player = new player(this,keyH);
+        taskManager = new TaskManager(this, player);
+        menu = new Menu(this);
         this.setPreferredSize(new Dimension(szerokosc,wysokosc));
         this.setBackground(Color.black);
         this.setDoubleBuffered(true);
@@ -59,6 +75,9 @@ public class Panel extends JPanel implements Runnable{
         gameThread.start();
 
     }
+
+
+
     @Override
     public void run() {
 
@@ -90,8 +109,28 @@ public class Panel extends JPanel implements Runnable{
         }
     }
 
+
     public void update(){
-        player.update();
+        switch (GameState.state){
+            case PLAY:
+                if(!isAdded(gameWindow.okno, gameWindow.panel )){
+                    gameWindow.okno.remove(taskManager);
+                    gameWindow.okno.remove(menu);
+                    gameWindow.okno.add(gameWindow.panel);
+                    gameWindow.panel.revalidate();
+                    gameWindow.panel.requestFocus();
+                }
+                player.update();
+                break;
+            case QUEST:
+                break;
+
+        }
+    }
+
+    public boolean isAdded(Container container, Component component){
+        return SwingUtilities.isDescendingFrom(component, container);
+
     }
 
     public void paintComponent(Graphics g){
@@ -99,21 +138,50 @@ public class Panel extends JPanel implements Runnable{
 
         Graphics2D g2 = (Graphics2D) g;
 
-        //tile
-        manager.drawMap(g2);
-        //object
-        for (int i = 0; i < obj.length; i++){
-            if (obj[i] != null){
-                obj[i].draw(g2, this);
-            }
-        }
-        //player
-        player.draw(g2);
-
-        //UI
-        ui.draw(g2);
-        g2.dispose();
+        render(g);
 
     }
+
+    private void render(Graphics g) {
+        Graphics2D g2 = (Graphics2D) g;
+        switch (GameState.state){
+            case PLAY:
+                //tile
+                manager.drawMap(g2);
+                //object
+                for (int i = 0; i < obj.length; i++){
+                    if (obj[i] != null){
+                        obj[i].draw(g2, this);
+                    }
+                }
+                //player
+                player.draw(g2);
+
+                //UI
+                ui.draw(g2);
+                g2.dispose();
+                break;
+            case QUEST:
+                gameWindow.okno.remove(gameWindow.panel);
+                gameWindow.okno.add(taskManager);
+                taskManager.setFocusable(true);
+                taskManager.requestFocus();
+                taskManager.revalidate();
+                taskManager.repaint();
+                break;
+            case PAUSE:
+                gameWindow.okno.remove(gameWindow.panel);
+                gameWindow.okno.add(menu);
+                menu.setFocusable(true);
+                menu.requestFocus();
+                menu.revalidate();
+                menu.repaint();
+                break;
+            case RESULTS:
+                ui.draw(g2);
+                break;
+        }
+    }
+
 
 }

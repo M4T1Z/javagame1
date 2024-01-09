@@ -28,6 +28,11 @@ public class colission {
                 entityTopRow = (entityTopWorldY - en.playerSpeed)/gp.wielkoscBox;
                 tilenr1 = gp.manager.mapNr[entityLCol][entityTopRow];
                 tilenr2 = gp.manager.mapNr[entityRCol][entityTopRow];
+
+                if (tilenr1 == 9 || tilenr2 == 9){
+                    GameState.state = GameState.RESULTS;
+                }
+
                 if(gp.manager.tile[tilenr1].collision == true || gp.manager.tile[tilenr2].collision == true){
                     en.collisionOn = true;
                 }
@@ -37,6 +42,11 @@ public class colission {
                 entityBotRow = (entityBotWorldY + en.playerSpeed)/gp.wielkoscBox;
                 tilenr1 = gp.manager.mapNr[entityLCol][entityBotRow];
                 tilenr2 = gp.manager.mapNr[entityRCol][entityBotRow];
+
+                if (tilenr1 == 9 || tilenr2 == 9){
+                    GameState.state = GameState.RESULTS;
+                }
+
                 if(gp.manager.tile[tilenr1].collision == true || gp.manager.tile[tilenr2].collision == true){
                     en.collisionOn = true;
                 }
@@ -46,6 +56,10 @@ public class colission {
                 entityLCol = (entityLWorldX - en.playerSpeed)/gp.wielkoscBox;
                 tilenr1 = gp.manager.mapNr[entityLCol][entityTopRow];
                 tilenr2 = gp.manager.mapNr[entityLCol][entityBotRow];
+                if (tilenr1 == 9 || tilenr2 == 9){
+                    GameState.state = GameState.RESULTS;
+                }
+
                 if(gp.manager.tile[tilenr1].collision == true || gp.manager.tile[tilenr2].collision == true){
                     en.collisionOn = true;
                 }
@@ -55,6 +69,10 @@ public class colission {
                 entityRCol = (entityRWorldX + en.playerSpeed)/gp.wielkoscBox;
                 tilenr1 = gp.manager.mapNr[entityRCol][entityTopRow];
                 tilenr2 = gp.manager.mapNr[entityRCol][entityBotRow];
+
+                if (tilenr1 == 9 || tilenr2 == 9){
+                    GameState.state = GameState.RESULTS;
+                }
                 if(gp.manager.tile[tilenr1].collision == true || gp.manager.tile[tilenr2].collision == true){
                     en.collisionOn = true;
                 }
