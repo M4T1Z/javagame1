@@ -7,8 +7,7 @@ public class colission {
         this.gp = gp;
 
     }
-
-
+    //sprawdzenie kolizji
     public void checker(entity en){
 
         int entityLWorldX = en.worldX +en.SolidBox.x;
@@ -81,6 +80,7 @@ public class colission {
 
 
     }
+    //kolizje z obiektami (śmieciami)
     public int checkObject(entity entity, boolean player){
         int index = 9999;
 

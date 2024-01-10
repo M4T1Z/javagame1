@@ -14,7 +14,7 @@ public class TaskButtonHandler implements ActionListener {
         this.panel = panel;
         this.player = player;
     }
-
+//akcje po kliknięciu na pojemniki
     @Override
     public void actionPerformed(ActionEvent e) {
         String command = e.getActionCommand();
@@ -22,9 +22,9 @@ public class TaskButtonHandler implements ActionListener {
             player.points += 1;
         }
         else{
-            panel.playtime += 10;
+            panel.playtime += 5;
             panel.taskManager.errors += 1;
-            panel.taskManager.error_time += 10;
+            panel.taskManager.error_time += 5;
         }
         panel.obj[player.objIndex] = null;
         GameState.state = GameState.PLAY;

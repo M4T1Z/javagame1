@@ -16,7 +16,7 @@ public class UI {
         arial_80 = new Font("Arial", Font.BOLD, 80);
 
     }
-
+//plansza kończąca rozgrywke, timer oraz licznik pkt
     public void draw(Graphics2D g2){
 
         if (GameState.state == GameState.RESULTS){
@@ -27,7 +27,7 @@ public class UI {
 
             g2.setFont(arial_45);
             g2.drawString("Twój czas: "+format.format(gp.playtime),gp.szerokosc/4-25,gp.wysokosc/2);
-            g2.drawString("Punkty: "+ gp.player.points, gp.szerokosc/4-25, gp.wysokosc/2+50);
+            g2.drawString("Punkty: "+ gp.player.points + "/28", gp.szerokosc/4-25, gp.wysokosc/2+50);
             g2.drawString("Błędy: "+ gp.taskManager.errors, gp.szerokosc/4-25, gp.wysokosc/2+100);
             g2.drawString("Czas doliczony za błędy: +"+ gp.taskManager.error_time + "s", gp.szerokosc/4+-25, gp.wysokosc/2+150);
 

@@ -1,17 +1,13 @@
 package main;
 
-import entity.player;
-
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 public class Menu extends JPanel {
-    public final int width = 1024;
-    public final int height = 768;
-    public Panel panel;
-    public  JLabel background;
 
+    public Panel panel;
+
+//wyswietlanie menu
     public Menu(Panel panel) {
         super();
         this.panel = panel;
@@ -21,7 +17,7 @@ public class Menu extends JPanel {
         initText();
         initButtons();
     }
-
+//ustawienie menu - przyciski i tekst
     public void initButtons(){
         ReturnButton ret = new ReturnButton("Powrót");
         ret.setFont(new Font("Arial", Font.BOLD, 45));

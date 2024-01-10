@@ -17,7 +17,7 @@ public class ReturnButton extends JButton {
         setVisible(true);
     }
 
-    //quits game with after confirmation
+    //kończy grę po zatwierdzeniu
     private class B1 implements ActionListener{
         public void actionPerformed (ActionEvent a) {
             GameState.state = GameState.PLAY;

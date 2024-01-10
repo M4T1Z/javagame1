@@ -3,12 +3,9 @@ package main;
 import entity.player;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 public class TaskManager extends JPanel {
-    public final int width = 1024;
-    public final int height = 768;
     public int errors = 0;
     public int error_time = 0;
     public Panel panel;
@@ -26,15 +23,14 @@ public class TaskManager extends JPanel {
 
         taskButtonHandler = new TaskButtonHandler(this.panel, this.player);
 
-        //setBackground(Color.CYAN);
-        // task button handler
+
         initButtons();
         background = new JLabel();
         background.setBounds(0,0,1024,768);
         background.setIcon(new ImageIcon("src/objects/panel4.png"));
         add(background);
     }
-
+//ustawienia panelu z pojemnikami
     public void initButtons(){
         bin1 = new JButton("Paper");
         bin1.setFont(new Font("Arial", Font.BOLD, 10));

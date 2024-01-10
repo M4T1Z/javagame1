@@ -17,7 +17,7 @@ public class EndButton extends JButton {
         setVisible(true);
     }
 
-    //quits game with after confirmation
+    //koniec gry po wciśnięciu
     private class B1 implements ActionListener{
         public void actionPerformed (ActionEvent a) {
             System.exit(0);

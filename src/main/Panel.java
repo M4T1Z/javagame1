@@ -1,11 +1,8 @@
 package main;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 
 import entity.player;
 import map.manager;
@@ -25,13 +22,10 @@ public class Panel extends JPanel implements Runnable{
     //ustawienia mapy świata
     public final int MaxWorldCol = 302/2;
     public final int MaxWorldRow = MaxWys;
-    public final int worldSzer = MaxWorldCol * wielkoscBox;     //6400 px
-    public final int worldWys = MaxWorldRow * wielkoscBox;      //768 px
     double playtime;
 
     public GameWindow gameWindow;
 
-    public BufferedImage bufferedImage;
 
     manager manager = new manager(this);
     KeyHandler keyH = new KeyHandler();
@@ -43,7 +37,7 @@ public class Panel extends JPanel implements Runnable{
     public player player;
     public TaskManager taskManager;
     public Menu menu;
-    public Sobject obj[] = new Sobject[35];
+    public Sobject obj[] = new Sobject[30];
 
 
     int fps = 60;
@@ -77,7 +71,7 @@ public class Panel extends JPanel implements Runnable{
     }
 
 
-
+    //funkcja odświeżająca
     @Override
     public void run() {
 

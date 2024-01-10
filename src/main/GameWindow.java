@@ -4,11 +4,11 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GameWindow {
-    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize(); //<------------------------------------------------------ tutaj :>
+    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     public JFrame okno;
     public Panel panel;
 
-
+//wyświetlanie okna aplikacji
     public GameWindow() {
         okno = new JFrame();
         okno.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -22,7 +22,7 @@ public class GameWindow {
         okno.add(panel);
 
         okno.setUndecorated(true);
-        okno.setLocation((screenSize.width- panel.szerokosc)/2, (screenSize.height- panel.wysokosc)/2); // <-------------------------------- i tutaj :>
+        okno.setLocation((screenSize.width- panel.szerokosc)/2, (screenSize.height- panel.wysokosc)/2);
         okno.pack();
 
         panel.setupObject();
